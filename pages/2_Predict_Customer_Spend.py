@@ -82,9 +82,9 @@ with col3:
     ).select(trunc(min(col('PREDICTED_SPEND'))), trunc(max(col('PREDICTED_SPEND')))).toPandas().iloc[0, ]
 
     st.write(f'This customer is likely to spend between ')
-    st.metric(label="", value=f"${minspend}")
-    #st.write("and")
-    st.metric(label="and", value=f"${maxspend}")
+    st.metric(label="Minimum Spend", value=f"${minspend}", label_visibility='hidden')
+    st.write("and")
+    st.metric(label="Maximum Spend", value=f"${maxspend}", label_visibility='hidden')
 
     st.markdown("---")
     st.write("\nThe biggest drivers of customer spend are:")

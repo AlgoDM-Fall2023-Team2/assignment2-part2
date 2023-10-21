@@ -1,5 +1,6 @@
 import json
 
+import pandas as pd
 import streamlit as st
 from functions.df_creator import df_creator
 from snowflake.snowpark.session import Session
@@ -16,6 +17,7 @@ gender = st.selectbox(
     'Gender',
     ("Female", "Male"),
     index = None,
+
     placeholder= "Select your Gender"
 )
 
@@ -59,7 +61,7 @@ if button_clicked:
     st.table(df)
 
     session = (
-        Session.builder.configs(st.secrets.db_credentials_p3
+        Session.builder.configs(st.secrets.db_credentials_p1
     ).create())
 
     snow_df = session.createDataFrame(df)
@@ -67,12 +69,11 @@ if button_clicked:
     result = snow_df.with_column('PREDICTED',F.call_udf("TPCDS_PREDICT_CLV",
                                                                [F.col(c) for c in df.columns]))
 
-    #prediction = predict(df)
-
     prediction = result.to_pandas()["PREDICTED"].loc[0]
     prediction = round(prediction, 2)
 
     st.subheader("The predicted Value is ")
-    st.write(f'''$ {prediction}''')
+    # st.write(f'''$ {prediction}''')
+    st.metric(label="Predicted Value", value=f"${prediction}", label_visibility='hidden')
 
 st.markdown("---")
