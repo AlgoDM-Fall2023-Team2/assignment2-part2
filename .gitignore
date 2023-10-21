@@ -1,3 +1,4 @@
 pages/connections/connection_1.json
 pages/connections/connection_3.json
 pages/connections/creds_2.json
+.streamlit/secrets.toml

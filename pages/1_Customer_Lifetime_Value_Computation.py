@@ -59,7 +59,7 @@ if button_clicked:
     st.table(df)
 
     session = (
-        Session.builder.configs(json.load(open("pages/connections/connection_1.json"))
+        Session.builder.configs(st.secrets.db_credentials_p3
     ).create())
 
     snow_df = session.createDataFrame(df)

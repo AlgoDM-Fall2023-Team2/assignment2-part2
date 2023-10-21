@@ -4,16 +4,18 @@ from snowflake.snowpark.session import Session
 from snowflake.snowpark.functions import *
 import json
 
+
+st.set_page_config(layout="wide")
 # %%
 # Create a session to Snowflake with credentials
 with open("pages/connections/creds_2.json") as f:
     connection_parameters = json.load(f)
-session = Session.builder.configs(connection_parameters).create()
+# session = Session.builder.configs(connection_parameters).create()
+session = Session.builder.configs(st.secrets.db_credentials_p2).create()
 
 # %%
 # Header
 head1, head2 = st.columns([8, 1])
-
 with head1:
     st.header("Customer Spend Prediction Model")
 with head2:

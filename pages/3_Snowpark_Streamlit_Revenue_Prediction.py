@@ -12,9 +12,10 @@ import streamlit as st
 APP_ICON_URL = "https://i.imgur.com/dBDOHH3.png"
 
 # Function to create Snowflake Session to connect to Snowflake
+
 def create_session():
     if "snowpark_session" not in st.session_state:
-        session = Session.builder.configs(json.load(open("pages/connections/connection_3.json"))).create()
+        session = Session.builder.configs(st.secrets.db_credentials_p3).create()
         session.use_warehouse("SNOWPARK_DEMO_WH")
         session.use_database("SNOWPARK_ROI_DEMO")
         session.use_schema("AD_DATA")
