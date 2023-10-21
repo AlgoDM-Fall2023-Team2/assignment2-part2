@@ -8,8 +8,8 @@ import json
 st.set_page_config(layout="wide")
 # %%
 # Create a session to Snowflake with credentials
-with open("pages/connections/creds_2.json") as f:
-    connection_parameters = json.load(f)
+# with open("pages/connections/creds_2.json") as f:
+#     connection_parameters = json.load(f)
 # session = Session.builder.configs(connection_parameters).create()
 session = Session.builder.configs(st.secrets.db_credentials_p2).create()
 
