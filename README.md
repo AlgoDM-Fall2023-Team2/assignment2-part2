@@ -2,6 +2,8 @@
 
 # **Welcome to the Retail Analytics Insights Application** 🛍️📊
 
+**<u>Access the Streamlit application:**</u> [HERE](https://team02-assignment02-part02.streamlit.app/).
+
 In the dynamic landscape of retail, understanding and leveraging data is pivotal for success. Our application, powered by Streamlit and Snowflake, harnesses the potential of the TPC DS dataset to provide actionable insights for retailers. Through the seamless integration of Snowpark and Python's scikit-learn library, we've created a powerful platform for data preprocessing, model training, and inference without the need for complex stored procedures.
 
 ## Page 1: Customer Lifetime Value (CLV) Calculation 💰
