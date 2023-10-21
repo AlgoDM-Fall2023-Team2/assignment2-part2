@@ -2,8 +2,10 @@
 
 # **Welcome to the Retail Analytics Insights Application** 🛍️📊
 
-**<u>Access the Streamlit application:**</u>
-<a href="https://info7374-team2-assignment2-part2.streamlit.app/" target="_blank">HERE</a>
+**Access the Streamlit application:** [Click here](https://info7374-team2-assignment2-part2.streamlit.app/)
+
+**Access Codelabs document:** [Click here](https://codelabs-preview.appspot.com/?file_id=1_TlIprmugQnLkHQ8zF7xFMn84xxv-Di4Vctq-DFC7Kk#0)
+
 
 In the dynamic landscape of retail, understanding and leveraging data is pivotal for success. Our application, powered by Streamlit and Snowflake, harnesses the potential of the TPC DS dataset to provide actionable insights for retailers. Through the seamless integration of Snowpark and Python's scikit-learn library, we've created a powerful platform for data preprocessing, model training, and inference without the need for complex stored procedures.
 
